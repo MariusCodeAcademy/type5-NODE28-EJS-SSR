@@ -11,14 +11,10 @@
     <title>Ejs | <%= title %></title>
   </head>
   <body>
-    <% const userName = 'James' %>
-    <nav>
-      <a href="/" class="nav-link">Home</a>
-      <a href="/about" class="nav-link">About</a>
-    </nav>
+    <% const userName = 'James' %> <%- include('partials/nav.ejs') %>
     <h1>Welcome to SSR <%= userName %></h1>
     <p>Today is <%= new Date().getDate() %></p>
     <h2><%= 60 * 60 %></h2>
     <h3>age is <%= age %></h3>
-  </body>
-</html>
+  
+<%- include('partials/footer.ejs') %>

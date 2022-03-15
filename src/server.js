@@ -23,6 +23,7 @@ app.get('/', (req, res) => {
   const data = {
     title: 'Homepage 1',
     age: 25,
+    jsFileName: 'main.js'
   };
   res.render('index', data);
 });
