@@ -8,8 +8,11 @@
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/water.css@2/out/water.css"
     />
-    <title>Ejs | <%= title %></title>
+    <title>Ejs | <%= locals.title || title %></title>
     <link rel="stylesheet" href="css/main.css">
-    <script src="js/front.js" defer></script>
+    <% if (page === 'home') { %>
+        <script src="js/front.js" defer></script>
+    <% } %>
+ 
   </head>
   <body>

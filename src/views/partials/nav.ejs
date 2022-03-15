@@ -1,5 +1,5 @@
 <nav>
-  <a href="/" class="nav-link">Home</a>
-  <a href="/about" class="nav-link">About</a>
-  <a href="/contact" class="nav-link">Contact us</a>
+  <a href="/" class="nav-link <%= page === 'home' ? 'active' : '' %>">Home</a>
+  <a href="/about" class="nav-link <%= page === 'about' ? 'active' : '' %> ">About</a>
+  <a href="/contact" class="nav-link <%= page === 'contact' ? 'active' : '' %> ">Contact us</a>
 </nav>
