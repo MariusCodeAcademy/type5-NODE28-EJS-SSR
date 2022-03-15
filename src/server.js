@@ -14,6 +14,10 @@ const app = express();
 app.set('view engine', 'ejs');
 app.set('views', 'src/views');
 
+// static directory for css, img, js front files
+const staticPath = path.join(__dirname, 'assets')
+app.use(express.static(staticPath))
+
 // middleware
 app.use(morgan('dev'));
 app.use(cors());
@@ -35,5 +39,19 @@ app.get('/about', (req, res) => {
   };
   res.render('about', data);
 });
+app.get('/contact', (req, res) => {
+  const data = {
+    title: 'Contact us',
+  };
+  res.render('contact', data);
+});
+
+app.all('*', (req, res) => {
+  // 404
+  const data = {
+    title: '404 not found',
+  };
+  res.render('404', data);
+})
 
 app.listen(PORT, () => console.log(`Server is running on port ${PORT}`));

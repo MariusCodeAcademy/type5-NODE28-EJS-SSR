@@ -1,18 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/water.css@2/out/water.css"
-    />
-    <title>Ejs | <%= title %></title>
-  </head>
-  <body>
-    <% const userName = 'James' %> <%- include('partials/nav.ejs') %>
-    <h1>Welcome to SSR <%= userName %></h1>
+<%- include('partials/head.ejs') %>
+<%- include('partials/nav.ejs') %>
+    
+    <h1>Welcome to SSR </h1>
     <p>Today is <%= new Date().getDate() %></p>
     <h2><%= 60 * 60 %></h2>
     <h3>age is <%= age %></h3>
