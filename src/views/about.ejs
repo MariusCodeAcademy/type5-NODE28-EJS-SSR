@@ -8,7 +8,7 @@
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/water.css@2/out/water.css"
     />
-    <title>Ejs | About us</title>
+    <title>Ejs | <%= title %></title>
   </head>
   <body>
     <nav>
@@ -16,6 +16,11 @@
       <a href="/about" class="nav-link">About</a>
     </nav>
     <h1>This is about page</h1>
-    <p></p>
+    <h2>Web tech</h2>
+    <ul>
+      <% techArr.forEach(el => { %>
+      <li><%= el %></li>
+      <% }) %>
+    </ul>
   </body>
 </html>

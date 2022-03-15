@@ -20,17 +20,19 @@ app.use(cors());
 app.use(express.json());
 
 app.get('/', (req, res) => {
-  // const keliasIIndex = path.join(__dirname, 'views', 'index.html');
-  // // res.send('<h1>Hello express  </h1> ');
-  // res.sendFile(keliasIIndex);
-  res.render('index');
+  const data = {
+    title: 'Homepage 1',
+    age: 25,
+  };
+  res.render('index', data);
 });
 
 app.get('/about', (req, res) => {
-  // const keliasIIndex = path.join(__dirname, 'views', 'about.html');
-  // // res.send('<h1>Hello express  </h1> ');
-  // res.sendFile(keliasIIndex);
-  res.render('about');
+  const data = {
+    title: 'About us',
+    techArr: ['HTML', 'CSS', 'JS', 'Node'],
+  };
+  res.render('about', data);
 });
 
 app.listen(PORT, () => console.log(`Server is running on port ${PORT}`));
