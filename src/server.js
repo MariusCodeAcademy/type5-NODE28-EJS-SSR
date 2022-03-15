@@ -10,17 +10,27 @@ const PORT = process.env.SERVER_PORT || 3000;
 
 const app = express();
 
+// set engine, defaul directory /views
+app.set('view engine', 'ejs');
+app.set('views', 'src/views');
+
 // middleware
 app.use(morgan('dev'));
 app.use(cors());
 app.use(express.json());
 
 app.get('/', (req, res) => {
-  const keliasIIndex = path.join(__dirname, 'views', 'index.html');
-  console.log('kelias ===', keliasIIndex);
-  console.log('__dirname ===', __dirname);
-  // res.send('<h1>Hello express  </h1> ');
-  res.sendFile(keliasIIndex);
+  // const keliasIIndex = path.join(__dirname, 'views', 'index.html');
+  // // res.send('<h1>Hello express  </h1> ');
+  // res.sendFile(keliasIIndex);
+  res.render('index');
+});
+
+app.get('/about', (req, res) => {
+  // const keliasIIndex = path.join(__dirname, 'views', 'about.html');
+  // // res.send('<h1>Hello express  </h1> ');
+  // res.sendFile(keliasIIndex);
+  res.render('about');
 });
 
 app.listen(PORT, () => console.log(`Server is running on port ${PORT}`));
